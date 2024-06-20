@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/img/Style/style.css">
     <link rel="stylesheet" href="assets/img/Style/contato.css">
-    <script src="Script/Script.js"></script>
+    
     <title>Contato</title>
 </head>
 <body>
@@ -36,20 +36,21 @@
     
 
     <form  class="contato">
-        
-        <label for="nome  " >Nome:</label>
-        <input type="text" id="nome" name="name"  autofocus placeholder="Digite o seu nome">
-
+        <!--onkeyup="validaNome()" - onkeyup é quando pressiona a tela e sobre :nesse caso quando acontecer isso ele vai chamar a função validaNome que está no js-->
+        <label for="nome" >Nome:</label>
+        <input type="text" id="nome" name="nome"   autofocus placeholder="Digite o seu nome" onkeyup="validaNome()">
+<div id="txtNome"></div>
         
     
         <label for="email " >Email:</label>
-        <input type="email" id="email" name="email" autofocus placeholder="Digite um email válido">
+        <input type="email" id="email" name="email" autofocus placeholder="Digite um email válido"  onkeyup="validaEmail2()">
+        <div id="txtEmail"></div>
         
         <label for="assunto" >Assunto:</label>
-        <textarea name="assunto" id="assunto" cols="30" rows="5" autofocus placeholder="Texto com no máximo 1000 caracteres"></textarea>
+        <textarea name="assunto" id="assunto" cols="30" rows="5" autofocus placeholder="Texto com no máximo 500 caracteres" onkeyup="validaAssunto()"></textarea>
+        <div id="txtAssunto"></div>
         
-        
-        <button class="btn-default" type="submit">Enviar</button>  
+        <button class="btn-default" type="submit"  onclick="enviar()">Enviar</button>  
             </form>
 
     
@@ -60,7 +61,14 @@
     <p>Av. Brig. Faria Lima, 3477 </p>
     <p>São Paulo - SP</p>
     
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.4886191673227!2d-46.6821519!3d-23.586803099999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5744e0ebff5b%3A0x769bf4a32f914782!2sGoogle!5e0!3m2!1spt-BR!2sbr!4v1718383515638!5m2!1spt-BR!2sbr" width="450" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.4886191673227!2d-46.6821519!3d-23.586803099999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5744e0ebff5b%3A0x769bf4a32f914782!2sGoogle!5e0!3m2!1spt-BR!2sbr!4v1718383515638!5m2!1spt-BR!2sbr"
+     width="450" height="250" style="border:0;" allowfullscreen="" 
+     loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+       id="mapa" onmousemove="mapaZoom()"   onmouseout="mapaNormal()"></iframe>
+    <!--onmousemove="mapaZoom()" : é um evento para quando o mouse passar por cima do mapa , ele vai executar a função mapaZoom que está no js-->   
+    <!--onmouseout="mapaNormal()" : é um evento para quando o mouse sair de cima do mapa , ele vai executar a função mapaNormal que está no js-->   
+
+
 </section>
 
 </main>
@@ -78,7 +86,7 @@
 </footer>
     
     
-
+<script src="Script/Script.js"></script>
 
 
 </body>

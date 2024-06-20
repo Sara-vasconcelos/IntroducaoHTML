@@ -96,7 +96,9 @@ input:valid:focus{
     font-size: 1rem;
     background: rgba(255, 255, 255, 0.7);
     color :#1d1d1d;
+
 }
+
 form .btn-default {
     padding: 12px 20px;
     border: none;
@@ -124,6 +126,11 @@ form .btn-default {
     border: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+#mapa {
+   
+    aspect-ratio: 16/9;
+  }
 
 @media screen and (max-width: 600px){
     form{
